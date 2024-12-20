@@ -28,4 +28,5 @@ Alternatively, deliver one hex layer with many attributes attached.
 ### Polygons to Hex
 - Area of particular class
 - Continuous value statistics (area weighted)
+- Number of classes 
 
