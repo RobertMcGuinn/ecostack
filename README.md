@@ -10,7 +10,7 @@ Deliver this integrated dataset as a set of "hexified" layers that can be easily
 
 Alternatively, deliver one hex layer with many attributes attached.  
 
-Various methods for the "hexification"
+## Methods for the "hexification"
 
 ### Points to Hex
 - Count
@@ -23,5 +23,9 @@ Various methods for the "hexification"
 - Patch statistics
 - Topographic summaries
 ### Lines to Hex
+- Meters of line
+- Area of line (when buffered) - See Polygons to Hex
 ### Polygons to Hex
+- Area of particular class
+- Continuous value statistics (area weighted)
 
