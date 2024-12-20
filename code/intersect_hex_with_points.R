@@ -48,10 +48,12 @@ filt_h3 %>% group_by(h3_resolution_6) %>%
   View()
 
 ##### look at points that match a set of conditions and then extract the hexagon IDs in a list #####
-locality <- 'Davidson Seamount'
+string <- 'Caribbean'
+
+condition <- 'grepl(string, FishCouncilRegion)'
 
 cats <- filt_h3 %>%
-  filter(grepl(locality, Locality)) %>%
+  filter(!!rlang::parse_expr(condition)) %>%
   select(c('h3_resolution_7','h3_resolution_8'))
 
 hexlist <- unlist(cats, use.names = FALSE)
@@ -59,7 +61,7 @@ hexlist <- unique(hexlist)
 
 ## make a selection of points that match the same condition ##
 points <- filtgeo %>%
-  filter(grepl(locality, Locality))
+  filter(!!rlang::parse_expr(condition))
 
 ##### check ######
 # class(hexlist)
@@ -74,9 +76,8 @@ hexes <- cell_to_polygon(unique(hexlist), simple = FALSE)
 # st_crs(hexes)
 
 ##### export shapefiles for examination #####
-# library(sf)
-# st_write(hexes, "c:/rworking/deepseatools/indata/hexes.shp", append = F)
-# st_write(points, "c:/rworking/deepseatools/indata/points.shp", append = F)
+st_write(hexes, "c:/rworking/deepseatools/indata/hexes.shp", append = F)
+st_write(points, "c:/rworking/deepseatools/indata/points.shp", append = F)
 
 ##### load bathymetry #####
 # Get bounding box
