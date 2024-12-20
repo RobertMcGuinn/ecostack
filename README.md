@@ -6,9 +6,9 @@ Goal: Deliver Ecosystem Data Packages in the form of H3 hexagon layers with key 
 
 ### Advantages of the H3 approach vs. traditional geographic summary methods
 - Easy geographic integration and comparison: No more mismatched variables.  
-- Computationally efficient tablular queries rather than GIS operations.
+- Computationally efficient tabular queries rather than GIS operations.
 - Light weight (No need to store topology, that is all in the H3 ID).
-- Data reduction. Hex layers are a lot more light weight that original data.
+- Data reduction. Hex layers are a lot more light weight than original data.
 - Each "hexification" method can be modified to the interest of the researcher.
 
 #### Scale
